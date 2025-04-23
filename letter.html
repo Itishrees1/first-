@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Letter</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/letter.css">
+</head>
+<body>
+    <div class="container">
+        <div class="letter-container">
+            <div class="letter">
+                <p class="salutation">My Pasandida mard</p>
+                <p>Baby, as you know, I love you deeply. I know I'm not perfect by your standards, but my love for you comes from the very depths of my heart. I've always wanted to be by your side</p>
+                <p>We've been through many ups and downs, but every difficult situation has brought us closer. Special thanks to you for handling everything so calmly, and thank you for never giving up on me, no matter what.</p>
+                <p>Thank you for being you, for sharing your life with me, and for making every day precious. </p>
+                <p class="closing">With all my love,</p>
+                <p class="signature">Yours only yours.</p>
+            </div>
+            <div class="poll-container">
+                <h2>How much do you love me?</h2>
+                <form id="lovePoll">
+                    <input type="radio" id="a-lot" name="loveLevel" value="a-lot">
+                    <label for="a-lot">A whole lot!</label><br>
+                    <input type="radio" id="more than you think" name="loveLevel" value="more than you think">
+                    <label for="more than you think">more than you think!</label><br>
+                    <input type="radio" id="unconditionally" name="loveLevel" value="unconditionally">
+                    <label for="unconditionally">Unconditionally!</label><br>
+                    <button type="submit">Submit Answer</button>
+                </form>
+                <p id="pollResult" class="hidden"></p>
+            </div>
+            <button id="backToStart">Back to Start</button>
+        </div>
+    </div>
+
+    <script>
+        const lovePollForm = document.getElementById('lovePoll');
+        const pollResultDiv = document.getElementById('pollResult');
+        const backToStartButton = document.getElementById('backToStart');
+
+        lovePollForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const selectedOption = document.querySelector('input[name="loveLevel"]:checked');
+            if (selectedOption) {
+                pollResultDiv.textContent = `Thank you! You chose: ${selectedOption.labels[0].textContent}`;
+                pollResultDiv.classList.remove('hidden');
+            } else {
+                pollResultDiv.textContent = "Please select an option.";
+                pollResultDiv.classList.remove('hidden');
+            }
+        });
+
+        backToStartButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

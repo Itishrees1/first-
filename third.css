@@ -1,0 +1,92 @@
+.envelope-lock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.envelope {
+    font-size: 18em;
+    color: #808080;
+    position: relative; 
+    margin-bottom: 30px; 
+}
+
+.heart {
+    position: absolute;
+    top: 40%;
+    font-size:6em ;
+}
+.heart-lock {
+    font-size: 0.8em;
+    color: #030000;
+    position: absolute;
+    top: 49.9%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: default; 
+}
+
+.heart-lock.clickable {
+    cursor: pointer;
+}
+
+.password-container {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 20px;
+}
+
+.password-container input[type="password"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-container button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.password-container button:hover {
+    background-color: #4cae4c;
+}
+
+#hintButton {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#hintButton:hover {
+    background-color: #eea236;
+}
+
+#hint, #incorrect {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    color: #d9534f;
+    font-weight: bold;
+}

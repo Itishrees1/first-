@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock the Letter</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/third.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-lock-container">
+            <div class="envelope">✉️</div>
+            <div class="heart"> ❤️
+            </div>
+            <div id="heartLock" class="heart-lock clickable">click here</div>
+            <div id="passwordContainer" class="password-container hidden">
+                <input type="password" id="password" placeholder="Enter Password">
+                <button id="unlockButton">Unlock</button>
+            </div>
+            <button id="hintButton">Show Hint</button>
+            <div id="hint" class="hidden">Our bornday combination.</div>
+            <div id="incorrect" class="hidden error">oops!</div>
+        </div>
+    </div>
+
+    <script>
+        const heartLock = document.getElementById('heartLock');
+        const passwordContainer = document.getElementById('passwordContainer');
+        const passwordInput = document.getElementById('password');
+        const unlockButton = document.getElementById('unlockButton');
+        const hintButton = document.getElementById('hintButton');
+        const hintDiv = document.getElementById('hint');
+        const incorrectDiv = document.getElementById('incorrect');
+        const correctPassword = "2259"; 
+
+        heartLock.addEventListener('click', () => {
+            passwordContainer.classList.remove('hidden');
+        });
+
+        hintButton.addEventListener('click', () => {
+            hintDiv.classList.remove('hidden');
+        });
+
+        unlockButton.addEventListener('click', () => {
+            if (passwordInput.value === correctPassword) {
+                window.location.href = 'letter.html';
+            } else {
+                incorrectDiv.classList.remove('hidden');
+                setTimeout(() => {
+                    incorrectDiv.classList.add('hidden');
+                }, 2000); 
+            }
+        });
+    </script>
+</body>
+</html>
